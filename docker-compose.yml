@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    environment:
+      - MONGODB_URI=mongodb://mongo
+      - REDIS_URI=redis://redis
+    ports:
+      - 8080:8080
+    volumes:
+      - "./server:/server"
+    links:
+      - redis
+      - mongo
+    command: python /server/watch.py
+  redis:
+    image: redis
+  mongo:
+    image: mongo

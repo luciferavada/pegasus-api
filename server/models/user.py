@@ -1,10 +1,11 @@
 import hashlib
 
-from sugar_odm import MongoDBModel, Field
-from sugar_api import JSONAPIMixin
+from sugar_odm import Field
+
+from . apimodel import APIModel
 
 
-class User(MongoDBModel, JSONAPIMixin):
+class User(APIModel):
 
     __rate__ = ( 1, 'secondly' )
 
