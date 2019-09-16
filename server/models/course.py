@@ -16,7 +16,7 @@ class Course(APIModel):
     __acl__ = {
         'administrator': ['all'],
         'other': ['read', 'read_all'],
-        'unauthorized': ['read', 'read_all']
+        #'unauthorized': ['read', 'read_all']
     }
 
     name = Field(required=True)
